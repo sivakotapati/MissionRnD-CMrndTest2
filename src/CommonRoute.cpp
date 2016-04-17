@@ -67,11 +67,11 @@ char * find_common_route(char * hacklist, char *codelist, int *cost){
 }
 char * compare(char * hacklist, char *codelist, int h,int c,int *cost){
 	char *result = (char *)malloc(10 * sizeof(char));
-	cost = 0;
+	*cost = 0;
 	int i = 0;
 	for (; hacklist[h] == codelist[c]&&hacklist[h]!='\0'; h++, c++){
 		result[i++] = hacklist[h];
-		cost = cost + hacklist[h] - 'A' + 1;
+		*cost = *cost + hacklist[h] - 'A' + 1;
 	}
 	result[i] = '\0';
 	return result;
